@@ -8,8 +8,8 @@ int main() {
     printf("Пожалуйста введите любой x: ");
     scanf("%f", &x);
 
-    // Условный оператор if, проверяет число x, и определяет 
-    // какую формулу применить в зависимости от числа
+    // Conditional "if" statement checks number "x" and defines 
+    // which formula is needed depending on number
 
     if (x > 2) {
         y = 4;
