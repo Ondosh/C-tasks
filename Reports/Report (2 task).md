@@ -17,3 +17,42 @@
 ```
 
 Мы видим здесь условный оператор if, который проверяет "истинность" условия. В данном случае проверяется x и в зависимости от того, какому числу x принадлежит, выбирается формула для переменной y. 
+
+Исходный код:
+```C
+#include <stdio.h>
+#include <math.h>
+
+  
+  
+
+int main() {
+float x, y;
+
+
+printf("Пожалуйста введите любой x: ");
+scanf("%f", &x);
+
+  
+
+// Conditional "if" statement checks number "x" and defines
+// which formula is needed depending on number
+
+  
+
+if (x > 2) {
+y = 4;
+}
+
+else if (x > -1) {
+y = pow(x, 2);
+}
+
+else {
+y = -1/(pow(x, 2));
+}
+
+printf("y равен: %f", y);
+return 0;
+}
+```
