@@ -1,6 +1,6 @@
 Условия задачи:
 
-![[Pasted image 20250629230132.png]]
+![Pasted image](Imgs/9.1.png)
 
 ```C
 #include <stdio.h>

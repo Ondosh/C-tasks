@@ -1,6 +1,6 @@
 Условия задачи: (под буквой "в")
 
-![[4.png]]
+![Pasted image](Imgs/4.png)
 
 ```C
 #include <stdio.h>
