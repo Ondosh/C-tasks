@@ -2,9 +2,9 @@
 
 ![Pasted image](Imgs/9.1.png)
 
-```C
-#include <stdio.h>
+Исходный код модуля:
 
+```C
 // Function g: Helper function that performs a linear congruential operation
 // Parameters:
 //   n - input value
@@ -26,7 +26,7 @@ int g(int n, int a, int c) {
 int f(int n, int a, int c){
     if (n >= 0 && n <= 9) {
         // Base case: return n directly if it's a single digit
-        return n;
+    return n;
     }
     else {
         // Recursive case:
@@ -36,25 +36,30 @@ int f(int n, int a, int c){
         return (gn * (f(n - 1 - gn, a, c)) + n);
     }
 }
-  
-int main(){
-    int m, a, c;        // Variables for input: n (stored in m), a, and c
-    int result;         // Variable to store the computation result
+```
 
-    // Get input values from user
+Исходный код main-файла:
+
+```C
+#include <stdio.h>
+#include "module.c"
+
+// Прототипы функций
+int g(int n, int a, int c);
+int f(int n, int a, int c);
+  
+int main() {
+    int m, a, c;
     printf("Input 'n', 'a' and 'c': ");
     scanf("%d%d%d", &m, &a, &c);
-  
-    // Validate that n (m) is non-negative
+
     if (m < 0) {
         printf("Error: 'n' must be non-negative.\n");
-        return 1;       // Return error code
+        return 1;
     }
 
-    // Compute the result using function f
-    result = f(m, a, c);
-    // Print the result
-    printf("Result is: %d", result);
-  
-    return 0;           // Successful program termination
-}```
+    int result = f(m, a, c);
+    printf("Result is: %d\n", result);
+    return 0;
+}
+```
