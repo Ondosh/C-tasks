@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "module.c"
 
-// Прототипы функций
-int g(int n, int a, int c);
-int f(int n, int a, int c);
 
 int main() {
     int m, a, c;
