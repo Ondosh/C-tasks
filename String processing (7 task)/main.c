@@ -7,33 +7,28 @@ int is_utf8_a(const unsigned char *s) {
 }
 
 int main() {
-    int n;
-    printf("Введите n: ");
-    if (scanf("%d", &n) != 1 || n <= 0) {
-        fprintf(stderr, "Введите целое положительное число.\n");
-        return 1;
-    }
-
-    n = n * 2; // Учитываем 2 байта на символ (для кириллицы в UTF-8)
-    getchar(); // Удаляем '\n' после ввода числа
+    size_t len;
 
     // Выделяем память под строку
-    char *s = (char *)calloc(n + 1, sizeof(char));
+    char *s = (char *)calloc(len, sizeof(char));
     if (!s) {
         fprintf(stderr, "Ошибка выделения памяти.\n");
         return 1;
     }
 
     printf("Введите строку: ");
-    if (!fgets(s, n + 1, stdin)) {
+    if (!fgets(s, len, stdin)) {
         fprintf(stderr, "Ошибка при чтении строки.\n");
         free(s);
         return 1;
     }
-
     // Удаляем '\n', если он остался
     s[strcspn(s, "\n")] = '\0';
 
+    len = strlen(s); // Возвращаем длину строки 
+    // (учитывая то, что кириллические русские символы составляют 2 байта)
+
+    
     // Поиск конца последнего слова
     int end = strlen(s) - 1;
     while (end >= 0 && s[end] == ' ')
